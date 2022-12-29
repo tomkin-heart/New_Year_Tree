@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Christmas Tree</title>
+	</head>
+	<style>
+		body {
+			background-color: black;
+			color: white;
+			text-align: center;
+			font-size: 25px;
+		}
+		h1 {
+			margin: 0;
+		}
+
+		/* Triangle */
+		.triangle {
+			border-bottom-color: green !important;
+			border-top-width: 0px !important;
+			width: 0px;
+			display: inline-block;
+		}
+		.triangle.small {
+			border: 250px transparent solid;
+		}
+		.triangle.middle {
+			border: 350px transparent solid;
+			margin-top: -100px;
+		}
+		.triangle.big {
+			border: 450px transparent solid;
+			margin-top: -150px;
+		}
+
+		/* Circle */
+		.circle {
+			position: absolute;
+			border-radius: 9999px;
+			left: 50%;
+			top: 40px;
+			transform: translate(-50%, -50%);
+		}
+		.circle.small {
+			width: 30px;
+			height: 30px;
+		}
+		.circle.middle {
+			width: 60px;
+			height: 60px;
+		}
+		.circle.big {
+			width: 100px;
+			height: 100px;
+		}
+		.circle.magenta {
+			background-color: magenta;
+		}
+		.circle.blue {
+			background-color: blue;
+		}
+		.circle.pink {
+			background-color: pink;
+		}
+		.circle.yellow {
+			background-color: yellow;
+		}
+		.circle.orangered {
+			background-color: OrangeRed;
+		}
+		.circle.white {
+			background-color: white;
+		}
+
+		/* square */
+		.square {
+			position: absolute;
+			left: 50%;
+			bottom: 0%;
+			transform: translateX(-50%);
+			border-radius: 10px;
+		}
+		.square.small {
+			width: 80px;
+			height: 80px;
+			margin-left: 200px;
+			background-color: red;
+		}
+		.square.middle {
+			width: 120px;
+			height: 120px;
+			margin-left: -80px;
+			background-color: crimson;
+		}
+		.square.big {
+			width: 180px;
+			height: 180px;
+			margin-left: 100px;
+			background-color: darkred;
+		}
+
+		/* time */
+		.countdown {
+			position: absolute;
+			text-align: left;
+		}
+		.countdown.germany {
+			right: 50px;
+			top: 120px;
+			color: violet;
+		}
+		.countdown.belarus {
+			left: 50px;
+			top: 120px;
+			color: yellow;
+		}
+		.countdown.moldavien {
+			left: 50px;
+			top: 230px;
+			color: deepskyblue;
+		}
+	</style>
+	<body>
+		<h1>Happy New Year!</h1>
+		<br />
+		<div class="triangle small"></div>
+		<br />
+		<div class="triangle middle"></div>
+		<br />
+		<div class="triangle big"></div>
+		<br />
+
+		<div
+			class="circle big blue"
+			style="margin-left: -220px; margin-top: 600px"
+		>
+			<!-- 1 -->
+		</div>
+		<div
+			class="circle small pink"
+			style="margin-left: -50px; margin-top: 670px"
+		>
+			<!-- 2 -->
+		</div>
+		<div
+			class="circle big magenta"
+			style="margin-left: 200px; margin-top: 530px"
+		>
+			<!-- 3 -->
+		</div>
+		<div
+			class="circle small orangered"
+			style="margin-left: 260px; margin-top: 750px"
+		>
+			<!-- 4 -->
+		</div>
+		<div
+			class="circle big yellow"
+			style="margin-left: -320px; margin-top: 850px"
+		>
+			<!-- 5 -->
+		</div>
+		<div
+			class="circle middle blue"
+			style="margin-left: -50px; margin-top: 840px"
+		>
+			<!-- 6 -->
+		</div>
+		<div
+			class="circle big pink"
+			style="margin-left: 250px; margin-top: 900px"
+		>
+			<!-- 7 -->
+		</div>
+		<div
+			class="circle small magenta"
+			style="margin-left: -70px; margin-top: 250px"
+		>
+			<!-- 8 -->
+		</div>
+		<div
+			class="circle middle orangered"
+			style="margin-left: 70px; margin-top: 220px"
+		>
+			<!-- 9 -->
+		</div>
+		<div
+			class="circle middle yellow"
+			style="margin-left: 100px; margin-top: 700px"
+		>
+			<!-- 10 -->
+		</div>
+		<div
+			class="circle small blue"
+			style="margin-left: 170px; margin-top: 300px"
+		>
+			<!-- 11 -->
+		</div>
+		<div
+			class="circle middle pink"
+			style="margin-left: -180px; margin-top: 300px"
+		>
+			<!-- 12 -->
+		</div>
+		<div
+			class="circle middle magenta"
+			style="margin-left: -200px; margin-top: 800px"
+		>
+			<!-- 13 -->
+		</div>
+		<div
+			class="circle big orangered"
+			style="margin-left: -70px; margin-top: 490px"
+		>
+			<!-- 14 -->
+		</div>
+		<div
+			class="circle small yellow"
+			style="margin-left: 50px; margin-top: 400px"
+		>
+			<!-- 15 -->
+		</div>
+		<div class="square middle"></div>
+		<div class="square big"></div>
+		<div class="square small"></div>
+
+		<!-- Countdown-->
+		<div class="countdown germany">
+			<span>Deutschland</span>
+			<h1 id="time_Germany">00:00:00</h1>
+		</div>
+		<div class="countdown belarus">
+			<span>Belarus</span>
+			<h1 id="time_Belarus">00:00:00</h1>
+		</div>
+		<div class="countdown moldavien">
+			<span>Moldavien</span>
+			<h1 id="time_Moldavien">00:00:00</h1>
+		</div>
+	</body>
+
+	<script>
+		const calculate_timer = (target_time, html_id) => {
+			// Find the distance between now and the count down date
+			let now = new Date()
+			let distance = target_time.getTime() - now.getTime()
+			// Time calculations for days, hours, minutes and seconds
+			const minute = 1000 * 60
+			const hour = minute * 60
+			let H = Math.floor(distance / hour)
+				.toString()
+				.padStart(2, '0')
+			let M = Math.floor((distance % hour) / minute)
+				.toString()
+				.padStart(2, '0')
+			let S = Math.floor((distance % minute) / 1000)
+				.toString()
+				.padStart(2, '0')
+			// get element by id
+			const html_element = document.getElementById(html_id)
+			// Display the result in the element with id="demo"
+			if (distance >= 0) html_element.innerHTML = `${H}:${M}:${S}`
+			// If the count down is finished, write some text
+			else html_element.innerHTML = '🥳'
+		}
+
+		// Set the date we're counting down to
+		let target_germany = new Date('Jan 01 2023 00:00:00 GMT+0100')
+		let target_belarus = new Date('Jan 01 2023 00:00:00 GMT+0300')
+		let target_moldavien = new Date('Jan 01 2023 00:00:00 GMT+0200')
+
+		// update countdown
+		setInterval(function () {
+			calculate_timer(target_germany, 'time_Germany')
+			calculate_timer(target_belarus, 'time_Belarus')
+			calculate_timer(target_moldavien, 'time_Moldavien')
+		}, 500)
+
+		//Update the count down every 1 second
+		/*let x = setInterval(function () {
+			// Get today's date and time
+			let now_Germany = new Date().getTime()
+
+			// Find the distance between now and the count down date
+			let distance = countDownDate - now_Germany
+
+			// Time calculations for days, hours, minutes and seconds
+			let hours = Math.floor(
+				(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+			)
+			let minutes = Math.floor(
+				(distance % (1000 * 60 * 60)) / (1000 * 60)
+			)
+			let seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+			// Display the result in the element with id="demo"
+			document.getElementById('time_Germany').innerHTML =
+				hours + 'h ' + minutes + 'm ' + seconds + 's '
+
+			// If the count down is finished, write some text
+			if (distance < 0) {
+				clearInterval(x)
+				document.getElementById('time_Germany').innerHTML = '🥳'
+			}
+		}, 500)*/
+
+		// create a randomized range function
+		const rand = (min, max) => Math.floor(Math.random() * (max - min) + min)
+
+		// let wind = 0
+		const win_x = window.innerWidth
+		const win_y = window.innerHeight
+
+		// make 50 snowflakes
+		for (let i = 0; i < 50; i++) {
+			// create circle
+			const snow_flake = document.createElement('div')
+			// assign css classes
+			snow_flake.classList.add('circle', 'white')
+			// add to body
+			document.body.appendChild(snow_flake)
+
+			// set top
+			let y = rand(0, win_y) // set random top
+			// predefine letiables
+			let falling_speed, osc_speed
+
+			const init_random_parameters = () => {
+				// randomize size
+				const size = rand(4, 14) + 'px'
+				snow_flake.style.height = size
+				snow_flake.style.width = size
+				// randomize x
+				snow_flake.style.left = rand(0, win_x) + 'px'
+				// randomize falling speed
+				falling_speed = rand(1, 4)
+				// randomize oscilation speed
+				osc_speed = rand(0, 10) / 1000
+			}
+			init_random_parameters()
+
+			// init the animation loop
+			const loop = () => {
+				y += falling_speed
+				const left = Math.sin(y * osc_speed) * 100
+				snow_flake.style.transform = `translate(${left}px, ${y}px)`
+
+				// if snow flake drops below the screen
+				if (y > win_y) {
+					// reset it's height
+					y = 0
+					// randomize params again
+					init_random_parameters()
+				}
+				// repeat the loop
+				window.requestAnimationFrame(loop)
+			}
+			// start the loop
+			loop()
+		}
+	</script>
+</html>
